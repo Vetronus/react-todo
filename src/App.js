@@ -23,7 +23,7 @@ function TodoInput({addToList}) {
 
 	return (
 		<div className="font-medium text-base text-white border-solid border-2 border-gray-700 flex flex-row">
-			<input className="p-2 w-full outline-none text-black" type="text" placeholder="Add new todo" value={todo.name}  onChange={(e) => setTodo({name: e.target.value, done: false, id: Date.now()})}/>
+			<input className="p-2 w-full outline-none text-black" type="text" placeholder="Add a new todo" value={todo.name}  onChange={(e) => setTodo({name: e.target.value, done: false, id: Date.now()})}/>
 			<button className="px-4 py-1 bg-gray-700 text-white" onClick={addToDo}>Add</button>
 		</div>
 	)
@@ -63,11 +63,11 @@ export default function App() {
 
   return (
     <div className="flex items-center h-screen flex-col p-10 gap-10">
-      <h1 className="text-center font-bold text-4xl text-gray-700">My Todo List</h1>
+      <h1 className="text-center font-bold text-4xl text-gray-700">Simple TODOs</h1>
       <div className=" w-full sm:w-1/2 max-w-xl flex flex-col items-stretch gap-4 pb-10">
 				<TodoInput addToList = {addToList} />
 				{todoList.map((todo, index) => <TodoCard key={todo.id} todo={todo} removeFromList = {removeFromList} markDone = {markDone} />)}
-				{todoList.length===0 && <div className='text-center'> Create new todos to see them here.</div>}
+				{todoList.length===0 && <div className='text-center'> Create a new todo to see it here.</div>}
       </div>
     </div>
   )
